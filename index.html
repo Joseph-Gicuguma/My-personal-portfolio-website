@@ -90,13 +90,13 @@
                 <div class="home__img">
                     <!--<svg class="home__blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                         <path fill="#DB9D47" d="M64.9,-22.9C72.1,1.2,57.7,30.4,34.5,47.3C11.2,64.2,-21,68.6,-44,53.5C-67.1,38.4,-81,3.8,-72.2,-22.5C-63.3,-48.7,-31.7,-66.6,-1.4,-66.2C28.8,-65.7,57.6,-46.9,64.9,-22.9Z" transform="translate(100 100)" />-->
-                        <img class="home__blob-img" src="joe.jpg" alt="Joseph Gicuguma Kamau">
+                        <img class="home__blob-img" src="Joe-1.jpg" alt="Joseph Gicuguma Kamau">
                     </svg>
                 </div>
                 <div class="home__data">
                     <h1 class="home__title">Hi, I'm Joseph</h1>
-                    <h3 class="home__subtitle">A self taught Software and Web Developer based in Nairobi Kenya.</h3>
-                    <p class="home__description">I'm currently pursuing an undergraduate degree in Bachelor of Science(Information Technology) at KCA University.</p>
+                    <h3 class="home__subtitle">A Professional Software and Web Developer based in Nairobi Kenya.</h3>
+                    <p class="home__description">I'm currently a B.Sc.(Information Technology) Major at <a href="https://www.kca.ac.ke/">KCA University</a>.</p>
                     <a href="#contact" class="button button--flex">
                         Contact Me<i class="uil uil-message button__icon"></i>
                     </a>
@@ -117,11 +117,12 @@
         <span class="section__subtitle">My introduction</span>
 
         <div class="about__container container grid">
-            <img src="joe2.jpg" alt="" class="about__img">
+            <img src="Joe-2.jpg" alt="" class="about__img">
 
             <div>
                 <div class="about__data">
-                    <p class="about__description">I am a team player. I am outgoing, dedicated, and open-minded. I get across to people and adjust to changes with ease. I believe that a person should work on developing their professional skills and learning new things all the time.
+                    <p class="about__description"> I am a prolific full stack developer with a passion for Web Design and Development, Web Applications, Networking, UX/UI Design, Cyber Security, Artificial Intelligence and Web3.0.
+                        <br>I am also passionate about building world class websites and consistently receives high user experience scores for all web development projects.
                         <br> I practice <a href="https://www.google.com/search?q=goju+ryu+karate&oq=goju&aqs=chrome.2.69i57j0l4j46j46i175i199j0.11164j0j7&sourceid=chrome&ie=UTF-8">Karate</a>.</p>
                 </div>
                 <div class="about__info">
@@ -137,8 +138,8 @@
 
                 </div>
                 <div class="about__buttons">
-                    <a download="" href="Joseph's%20Resume.pdf" class="button button--flex">
-                        Download CV<i class="uil uil-download-alt button__icon"></i>
+                    <a href="#contact" class="button button--flex">
+                        Get Intouch<i class="uil  button__icon"></i>
                     </a>
                 </div>
             </div>
@@ -411,7 +412,7 @@
                     <div class="qualification__data">
                         <div>
                             <h3 class="qualification__title">Developer</h3>
-                            <span class="qualification__subtitle">CoreWeb-Developers</span>
+                            <span class="qualification__subtitle"><a href="https://core-web-developers.co.ke/" target="_blank">CoreWeb-Developers</a></span>
                             <div class="qualification__calendar">
                                 <i class="uil uil-calendar-alt"></i>
                                 2021 - Present day
@@ -593,7 +594,7 @@
 
         </div>
 
-        <p class="footer__copy">&#169; 2021, Joseph Gicuguma Kamau. All rights reserved.</p>
+        <p class="footer__copy">&#169; <span id="curr_year"></span> Joseph Gicuguma Kamau. All rights reserved.</p>
 
     </div>
 </footer>
@@ -608,5 +609,10 @@
 
 <!--===Main js===-->
 <script src="index.js"></script>
+<script>
+    var date = new Date();
+    var year = date.getFullYear();
+    document.getElementById('curr_year').innerHTML = year;
+</script>
 </body>
 </html>
