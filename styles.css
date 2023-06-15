@@ -502,7 +502,7 @@ img{
 }
 
 .skills__python{
-    width: 80%;
+    width: 60%;
 }
 
 .skills__mysql{
@@ -526,6 +526,14 @@ img{
 }
 
 .skills__photoshop{
+    width: 40%;
+}
+
+.skills__node{
+    width: 50%;
+}
+
+.skills__java{
     width: 40%;
 }
 
