@@ -509,7 +509,15 @@ img{
     width: 60%;
 }
 
+.skills__prisma{
+    width: 60%;
+}
+
 .skills__php{
+    width: 40%;
+}
+
+.skills__expressjs{
     width: 40%;
 }
 
