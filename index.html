@@ -117,13 +117,13 @@
 
             <div>
                 <div class="about__data">
-                    <p class="about__description">I'm a curious individual with a passion for developing outstanding software applications, always adhering to the latest best practices in software engineering. 
-                        <br> Intrigued by tech startups, I am currently working towards establishing my own company, driven by the belief in the power of collaboration and teamwork.
-                        <br>  Beyond the digital realm, I find solace in my faith and indulge in a love for travel, exploration, and fitness, including the disciplined practice of Karate.</p>
+                    <p class="about__description">I’m a curious and passionate software engineer dedicated to building high-quality, user-centric applications while staying at the forefront of modern software engineering best practices.
+                        <br> Fascinated by tech startups and innovation, I’m actively working on establishing my own company, driven by a strong belief in collaboration, problem-solving, and impact-driven solutions.
+                        <br>  Beyond coding, I find balance in faith, travel, and exploration, and I stay grounded through fitness and the disciplined practice of Karate.</p>
                 </div>
                 <div class="about__info">
                     <div>
-                        <span class="about__info-title">02+</span>
+                        <span class="about__info-title">03+</span>
                         <span class="about__info-name">Years <br> experience</span>
                     </div>
 
@@ -634,27 +634,27 @@
                 </div>
             </div>
 
-            <form action="mailto:gicugumajoseph@gmail.com?subject=Website reply!" class="contact__form grid" method="post">
+            <form id="contactForm" class="contact__form grid" method="post">
                 <div class="contact__inputs grid">
                     <div class="contact__content">
-                        <label for="" class="contact__label">Name</label>
-                        <input type="text" class="contact__input">
+                        <label for="name" class="contact__label">Name</label>
+                        <input type="text" id="name" class="contact__input">
                     </div>
 
                     <div class="contact__content">
-                        <label for="" class="contact__label">Email</label>
-                        <input type="email" class="contact__input">
+                        <label for="email" class="contact__label">Email</label>
+                        <input type="email" id="email" class="contact__input">
                     </div>
                 </div>
 
                 <div class="contact__content">
-                    <label for="" class="contact__label">Tel Number</label>
-                    <input type="tel" class="contact__input">
+                    <label for="phone" class="contact__label">Tel Number</label>
+                    <input type="tel" id="phone" class="contact__input">
                 </div>
 
                 <div class="contact__content">
-                    <label for="" class="contact__label">Comment</label>
-                    <textarea name="" id="" cols="0" rows="7" class="contact__input"></textarea>
+                    <label for="message" class="contact__label">Comment</label>
+                    <textarea id="message" cols="0" rows="7" class="contact__input"></textarea>
                 </div>
 
                 <div>
@@ -732,5 +732,24 @@
     var year = date.getFullYear();
     document.getElementById('curr_year').innerHTML = year;
 </script>
+<script>
+    document.getElementById("contactForm").addEventListener("submit", async function (event) {
+        event.preventDefault();
+    
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const message = document.getElementById("message").value;
+    
+        const response = await fetch("http://localhost:5001/submit-form", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, email, phone, message }),
+        });
+    
+        const result = await response.json();
+        alert(result.message); // Show success message
+    });
+    </script>
 </body>
 </html>
