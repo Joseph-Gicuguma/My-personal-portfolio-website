@@ -84,14 +84,15 @@
                 </div>
                 <div class="home__img">
                     
-                        <path fill="#DB9D47" d="M64.9,-22.9C72.1,1.2,57.7,30.4,34.5,47.3C11.2,64.2,-21,68.6,-44,53.5C-67.1,38.4,-81,3.8,-72.2,-22.5C-63.3,-48.7,-31.7,-66.6,-1.4,-66.2C28.8,-65.7,57.6,-46.9,64.9,-22.9Z" transform="translate(100 100)" />-->
-                        <img class="home__blob-img" src="Joe-1.jpg" alt="Joseph Gicuguma Kamau">
+                        <path fill="#DB9D47" d="M64.9,-22.9C72.1,1.2,57.7,30.4,34.5,47.3C11.2,64.2,-21,68.6,-44,53.5C-67.1,38.4,-81,3.8,-72.2,-22.5C-63.3,-48.7,-31.7,-66.6,-1.4,-66.2C28.8,-65.7,57.6,-46.9,64.9,-22.9Z" transform="translate(100 100)" />
+                        <!-- <img class="home__blob-img" src="Joe-1.jpg" alt="Joseph Gicuguma Kamau"> -->
+                        <img class="home__blob-img" src="./assets/Images/joe-hero-section.jpeg" alt="Joseph Gicuguma Kamau">
                     </svg>
                 </div>
                 <div class="home__data">
                     <h1 class="home__title">Hi, I'm Joseph</h1>
                     <h3 class="home__subtitle">A Software Engineer based in Nairobi Kenya.</h3>
-                    <p class="home__description">I'm  presently in the pursuit of my Bachelor's degree in Information Technology at <a href="https://www.kca.ac.ke/">KCA University</a>.</p>
+                    <p class="home__description">I specialize in building user-centric web and mobile applications, leveraging technologies like React.js, JavaScript, Node.js, and Python. With a passion for innovation and business growth, I also lead business development and strategic partnerships, helping startups scale and create impact.</p>
                     <a href="#contact" class="button button--flex">
                         Contact Me<i class="uil uil-message button__icon"></i>
                     </a>
@@ -112,17 +113,17 @@
         <span class="section__subtitle">My introduction</span>
 
         <div class="about__container container grid">
-            <img src="Joe-2.jpg" alt="" class="about__img">
+            <img src="./assets/Images/joe-about-section.jpeg" alt="" class="about__img">
 
             <div>
                 <div class="about__data">
-                    <p class="about__description">I'm a curious individual with a passion for developing outstanding software applications, always adhering to the latest best practices in software engineering. 
-                        <br> Intrigued by tech startups, I am currently working towards establishing my own company, driven by the belief in the power of collaboration and teamwork.
-                        <br>  Beyond the digital realm, I find solace in my faith and indulge in a love for travel, exploration, and fitness, including the disciplined practice of Karate.</p>
+                    <p class="about__description">I’m a curious and passionate software engineer dedicated to building high-quality, user-centric applications while staying at the forefront of modern software engineering best practices.
+                        <br> Fascinated by tech startups and innovation, I’m actively working on establishing my own company, driven by a strong belief in collaboration, problem-solving, and impact-driven solutions.
+                        <br>  Beyond coding, I find balance in faith, travel, and exploration, and I stay grounded through fitness and the disciplined practice of Karate.</p>
                 </div>
                 <div class="about__info">
                     <div>
-                        <span class="about__info-title">02+</span>
+                        <span class="about__info-title">03+</span>
                         <span class="about__info-name">Years <br> experience</span>
                     </div>
 
@@ -403,7 +404,7 @@
                             <span class="qualification__subtitle">KCA University</span>
                             <div class="qualification__calendar">
                                 <i class="uil uil-calendar-alt"></i>
-                                Sep 2020 - Present day
+                                    2020 - 2024
                             </div>
                         </div>
 
@@ -473,11 +474,30 @@
 
                 <!--====Qualifications content 2====-->
                 <div class="qualification__content" data-content id="work"> 
+
+                    <div class="qualification__data">
+                        <div></div>
+                        <div>
+                            <span class="qualification__rounder"></span>
+                            <span class="qualification__line"></span>
+                        </div>
+
+                        <div>
+                            <h3 class="qualification__title">Frontend Software Engineer</h3>
+                            <span class="qualification__subtitle">Neverest LLC.</span>
+                            <div class="qualification__calendar">
+                                <i class="uil uil-calendar-alt"></i>
+                                Aug 2024 - Present
+                            </div>
+                        </div>
+
+
+                    </div>
                     <!--====Qualification 1====-->
                     <div class="qualification__data">
                         <div>
-                            <h3 class="qualification__title">Head of Business Development and Operations </h3>
-                            <span class="qualification__subtitle">Investa Farm</span>
+                            <h3 class="qualification__title">Head of Business Development Growth and Partnerships </h3>
+                            <span class="qualification__subtitle">Investa Farm LTD.</span>
                             <div class="qualification__calendar">
                                 <i class="uil uil-calendar-alt"></i>
                                 Aug 2023 - Present day
@@ -503,7 +523,7 @@
                             <span class="qualification__subtitle">Urdrive</span>
                             <div class="qualification__calendar">
                                 <i class="uil uil-calendar-alt"></i>
-                                May 2023 - Present day
+                                May 2023 - Sep 2024
                             </div>
                         </div>
 
@@ -517,7 +537,7 @@
                             <span class="qualification__subtitle">CoreWeb-Developers</span>
                             <div class="qualification__calendar">
                                 <i class="uil uil-calendar-alt"></i>
-                                Aug 2021 - Present day
+                                Aug 2021 - Aug 2024
                             </div>
                         </div>
 
@@ -614,27 +634,27 @@
                 </div>
             </div>
 
-            <form action="mailto:gicugumajoseph@gmail.com?subject=Website reply!" class="contact__form grid" method="post">
+            <form id="contactForm" class="contact__form grid" method="post">
                 <div class="contact__inputs grid">
                     <div class="contact__content">
-                        <label for="" class="contact__label">Name</label>
-                        <input type="text" class="contact__input">
+                        <label for="name" class="contact__label">Name</label>
+                        <input type="text" id="name" class="contact__input">
                     </div>
 
                     <div class="contact__content">
-                        <label for="" class="contact__label">Email</label>
-                        <input type="email" class="contact__input">
+                        <label for="email" class="contact__label">Email</label>
+                        <input type="email" id="email" class="contact__input">
                     </div>
                 </div>
 
                 <div class="contact__content">
-                    <label for="" class="contact__label">Tel Number</label>
-                    <input type="tel" class="contact__input">
+                    <label for="phone" class="contact__label">Tel Number</label>
+                    <input type="tel" id="phone" class="contact__input">
                 </div>
 
                 <div class="contact__content">
-                    <label for="" class="contact__label">Comment</label>
-                    <textarea name="" id="" cols="0" rows="7" class="contact__input"></textarea>
+                    <label for="message" class="contact__label">Comment</label>
+                    <textarea id="message" cols="0" rows="7" class="contact__input"></textarea>
                 </div>
 
                 <div>
@@ -712,5 +732,24 @@
     var year = date.getFullYear();
     document.getElementById('curr_year').innerHTML = year;
 </script>
+<script>
+    document.getElementById("contactForm").addEventListener("submit", async function (event) {
+        event.preventDefault();
+    
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const message = document.getElementById("message").value;
+    
+        const response = await fetch("http://localhost:5001/submit-form", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, email, phone, message }),
+        });
+    
+        const result = await response.json();
+        alert(result.message); // Show success message
+    });
+    </script>
 </body>
 </html>

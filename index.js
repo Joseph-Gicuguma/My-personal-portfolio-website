@@ -134,6 +134,16 @@ themeButton.addEventListener('click', () => {
 
 
 
+function updateExperience() {
+    const startYear = 2021; 
+    const currentYear = new Date().getFullYear();
+    const experienceYears = currentYear - startYear;
+
+    document.querySelector(".about__info-title").textContent = experienceYears + "+";
+}
+
+document.addEventListener("DOMContentLoaded", updateExperience);
+
 
 
 
