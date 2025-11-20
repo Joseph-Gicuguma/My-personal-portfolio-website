@@ -982,5 +982,28 @@ img{
 }
 
 
+/* Theme toggle: show in mobile nav, hide duplicate on large screens */
+@media screen and (min-width: 967px) {
+    .nav__theme-mobile { display: none; }
+}
+
+@media screen and (max-width: 966px) {
+    .nav__theme-mobile {
+        display: block;
+    }
+    .nav__theme-mobile .nav__link{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .nav__theme-mobile .change-theme{
+        font-size: 1.25rem;
+        color: var(--title-color);
+    }
+    /* Hide the header-side theme button on small screens to avoid duplicate */
+    .nav__buttons .change-theme { display: none; }
+}
+
+
 
 

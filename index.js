@@ -110,12 +110,12 @@ window.addEventListener('scroll', scrollUp)
 /*======Dark and light theme======*/
 /* Dark / Light theme toggle with persistence */
 {
-    const themeButton = document.getElementById('theme-button');
+    const themeButtons = document.querySelectorAll('.change-theme');
     const darkTheme = 'dark-theme';
     const iconMoon = 'uil-moon';
     const iconSun = 'uil-sun';
 
-    if (themeButton) {
+    if (themeButtons.length) {
         // Load previously selected theme (if any)
         const selectedTheme = localStorage.getItem('selected-theme');
         const selectedIcon = localStorage.getItem('selected-icon');
@@ -123,32 +123,35 @@ window.addEventListener('scroll', scrollUp)
         if (selectedTheme === 'dark') document.body.classList.add(darkTheme);
         else if (selectedTheme === 'light') document.body.classList.remove(darkTheme);
 
-        // Ensure the button shows an icon (default: moon)
-        if (selectedIcon === iconSun) {
-            themeButton.classList.add(iconSun);
-        } else {
-            themeButton.classList.add(iconMoon);
-        }
+        // Initialize all buttons' icons. If no stored icon, derive from stored theme.
+        const effectiveIcon = selectedIcon || (selectedTheme === 'dark' ? iconSun : iconMoon);
+        themeButtons.forEach(btn => {
+            btn.classList.remove(iconMoon, iconSun);
+            btn.classList.add(effectiveIcon);
+        });
 
-        // Toggle handler
-        themeButton.addEventListener('click', () => {
+        // Click handler: toggle theme and sync all buttons
+        const toggleTheme = () => {
             document.body.classList.toggle(darkTheme);
 
-            // Swap icon classes
-            if (themeButton.classList.contains(iconMoon)) {
-                themeButton.classList.remove(iconMoon);
-                themeButton.classList.add(iconSun);
-            } else {
-                themeButton.classList.remove(iconSun);
-                themeButton.classList.add(iconMoon);
-            }
+            // Determine current icon to set
+            const nowDark = document.body.classList.contains(darkTheme);
+            const setIcon = nowDark ? iconSun : iconMoon;
 
-            // Save selection
-            const currentTheme = document.body.classList.contains(darkTheme) ? 'dark' : 'light';
-            const currentIcon = themeButton.classList.contains(iconMoon) ? iconMoon : iconSun;
-            localStorage.setItem('selected-theme', currentTheme);
-            localStorage.setItem('selected-icon', currentIcon);
-        });
+            themeButtons.forEach(b => {
+                b.classList.remove(iconMoon, iconSun);
+                b.classList.add(setIcon);
+            });
+
+            // Persist
+            localStorage.setItem('selected-theme', nowDark ? 'dark' : 'light');
+            localStorage.setItem('selected-icon', setIcon);
+        };
+
+        themeButtons.forEach(btn => btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            toggleTheme();
+        }));
     }
 }
 
