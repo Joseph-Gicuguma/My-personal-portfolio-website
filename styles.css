@@ -80,6 +80,12 @@ body.dark-theme{
     --container-color: hsl(var(--hue-color), 29%, 16%);
     --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
     --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
+
+    /* Ensure headings and important text are visible in dark mode */
+    --title-color: hsl(var(--hue-color), 8%, 95%);
+    --text-color-light: hsl(var(--hue-color), 8%, 75%);
+    --first-color: hsl(var(--hue-color), 69%, 62%);
+    --first-color-lighter: hsl(var(--hue-color), 69%, 28%);
 }
 
 /*====button dark/button light====*/
@@ -93,7 +99,7 @@ body.dark-theme{
     font-size: 1.25rem;
     color: var(--title-color);
     cursor: pointer;
-}*
+}
 
 .change-theme:hover{
     color: var(--first-color);
@@ -117,6 +123,7 @@ body{
     font-size: var(--normal-font-size);
     background-color: var(--body-color);
     color: var(--text-color);
+    transition: background-color .28s ease, color .28s ease;
 }
 
 h1,h2,h3,h4{
@@ -404,7 +411,7 @@ img{
     font-size: var(--small-font-size);
 }
 
-.about__info-title, .about__info-name,{
+.about__info-title, .about__info-name {
     display: block;
     text-align: center;
 }

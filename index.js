@@ -108,29 +108,49 @@ function scrollUp(){
 window.addEventListener('scroll', scrollUp)
 
 /*======Dark and light theme======*/
-/*const themeButton = document.getElementById('theme-button')
-const darkTheme = 'dark-theme'
-const iconTheme ='uil-sun'
+/* Dark / Light theme toggle with persistence */
+{
+    const themeButton = document.getElementById('theme-button');
+    const darkTheme = 'dark-theme';
+    const iconMoon = 'uil-moon';
+    const iconSun = 'uil-sun';
 
-const selectedTheme = localStorage.getItem('selected-theme')
-const selectedTheme = localStorage.getItem('selected-icon')
+    if (themeButton) {
+        // Load previously selected theme (if any)
+        const selectedTheme = localStorage.getItem('selected-theme');
+        const selectedIcon = localStorage.getItem('selected-icon');
 
-const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
-const getCurrentTheme = () => document.body.classList.contains(iconTheme) ? 'uil-moon' : 'uil-sun'
+        if (selectedTheme === 'dark') document.body.classList.add(darkTheme);
+        else if (selectedTheme === 'light') document.body.classList.remove(darkTheme);
 
-if(selectedTheme) {
-    document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
-    themeButton.body.classList[selectedIcon === 'uil-moon' ? 'add' : 'remove'](iconTheme)
+        // Ensure the button shows an icon (default: moon)
+        if (selectedIcon === iconSun) {
+            themeButton.classList.add(iconSun);
+        } else {
+            themeButton.classList.add(iconMoon);
+        }
+
+        // Toggle handler
+        themeButton.addEventListener('click', () => {
+            document.body.classList.toggle(darkTheme);
+
+            // Swap icon classes
+            if (themeButton.classList.contains(iconMoon)) {
+                themeButton.classList.remove(iconMoon);
+                themeButton.classList.add(iconSun);
+            } else {
+                themeButton.classList.remove(iconSun);
+                themeButton.classList.add(iconMoon);
+            }
+
+            // Save selection
+            const currentTheme = document.body.classList.contains(darkTheme) ? 'dark' : 'light';
+            const currentIcon = themeButton.classList.contains(iconMoon) ? iconMoon : iconSun;
+            localStorage.setItem('selected-theme', currentTheme);
+            localStorage.setItem('selected-icon', currentIcon);
+        });
+    }
 }
-
-themeButton.addEventListener('click', () => {
-    document.body.classList.toggle(darkTheme)
-    themeButton.classList.toggle(iconTheme)
-
-    localStorage.setItem('selected-theme', getCurrentTheme())
-    localStorage.setItem('selected-icon', getCurrentIcon)
-})
-*/
 
 
 
